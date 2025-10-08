@@ -11,8 +11,8 @@ export const categories = [
     id: 2,
     name: "Personal",
     todos: [
-      { id: 1, text: "Buy groceries", completed: false },
-      { id: 2, text: "Call Mom", completed: false },
+      { id: 1, text: "Call Mom", completed: false },
+      { id: 2, text: "Buy groceries", completed: false },
     ],
   },
 ];

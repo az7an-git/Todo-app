@@ -2,15 +2,15 @@ import TodoList from "../todos/TodoList";
 
 function CategoryItem({ category }) {
   const handleToggle = (todoId) => {
-    // Toggle todo state
+    // todoToggleState
     const todo = category.todos.find((todo) => todo.id === todoId);
     todo.completed = !todo.completed;
 
-    // Apply or remove line-through
+    // lineThrough
     const span = document.getElementById(`todo-${category.id}-${todo.id}`);
     span.style.textDecoration = todo.completed ? "line-through" : "";
 
-    // Check if all tasks are done
+    // allTasksDone
     const allDone = category.todos.every((todo) => todo.completed);
     const msg = document.getElementById(`msg-${category.id}`);
     msg.style.display = allDone ? "block" : "";
@@ -18,22 +18,23 @@ function CategoryItem({ category }) {
 
   return (
     <div
-      className="bg-white border border-gray-300 rounded-xl p-5 mb-4 
+      className="bg-white border border-gray-300 rounded-xl p-5 mb-3 
                  shadow-sm hover:shadow-md transition-all duration-300"
     >
-      {/* Category Title */}
-      <h2 className="text-xl font-semibold mb-3 border-b pb-1">
+      {/* categoryTitle */}
+      <h2 className="text-xl font-semibold mb-3 border-b pb-2 text-sky-600 ">
         {category.name}
       </h2>
 
-      {/* Todo list */}
+      {/* todoList */}
       <TodoList
         todos={category.todos}
+        // assignedToggleHandler
         onToggle={handleToggle}
         categoryId={category.id}
       />
 
-      {/* Message after all tasks complete */}
+      {/* tasksCompleteMsg */}
       <p
         id={`msg-${category.id}`}
         className="text-green-600 font-semibold mt-4 hidden"
