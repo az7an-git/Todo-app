@@ -2,7 +2,7 @@ import TodoItem from "../todos/TodoItem";
 
 function TodoList({ todos, onToggle, categoryId }) {
   return (
-    <ul style={{ listStyle: "none", padding: 0 }}>
+    <ul className="list-none p-0 mt-2">
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
