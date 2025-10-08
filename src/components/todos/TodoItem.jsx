@@ -7,13 +7,19 @@ function TodoItem({ todo, onToggle, categoryId }) {
       <div className="flex items-center gap-3">
         <input
           type="checkbox"
+          // unique global id for input
           id={`check-${categoryId}-${todo.id}`}
           defaultChecked={todo.completed}
           onChange={() => onToggle(todo.id)}
           className="size-4 accent-blue-600 cursor-pointer"
         />
 
-        <span id={`todo-${categoryId}-${todo.id}`}>{todo.text}</span>
+        <span
+          id={`todo-${categoryId}-${todo.id}`}
+          className={todo.completed ? "line-through" : ""}
+        >
+          {todo.text}
+        </span>
       </div>
     </li>
   );

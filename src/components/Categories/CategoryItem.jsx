@@ -8,7 +8,7 @@ function CategoryItem({ category }) {
 
     // Apply or remove line-through
     const span = document.getElementById(`todo-${category.id}-${todo.id}`);
-    span.style.textDecoration = todo.completed ? "line-through" : "none";
+    span.style.textDecoration = todo.completed ? "line-through" : "";
 
     // Check if all tasks are done
     const allDone = category.todos.every((todo) => todo.completed);
